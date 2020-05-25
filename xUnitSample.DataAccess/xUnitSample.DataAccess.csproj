@@ -4,4 +4,18 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Concrete\Context\rvjrjszj.hbf~" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\xUnitSample.Core\xUnitSample.Core.csproj" />
+    <ProjectReference Include="..\xUnitSample.Model\xUnitSample.Model.csproj" />
+  </ItemGroup>
+
 </Project>

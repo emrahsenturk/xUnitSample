@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\xUnitSample.Entity\xUnitSample.Entity.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

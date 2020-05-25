@@ -2,7 +2,7 @@
 
 namespace xUnitSample.Entity.Concrete
 {
-    public class StudentLessons : BaseEntity
+    public class StudentLesson : BaseEntity
     {
         public string StudentId { get; set; }
         public string LessonId { get; set; }
