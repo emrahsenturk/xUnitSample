@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using xUnitSample.Business.Abstract;
+using xUnitSample.Business.Concrete;
+using xUnitSample.DataAccess.Abstract;
+using xUnitSample.DataAccess.Concrete;
 
 namespace xUnitSample.Api
 {
@@ -25,6 +22,9 @@ namespace xUnitSample.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureDataAccessLayer(services);
+            ConfigureBusinessLayer(services);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -43,6 +43,20 @@ namespace xUnitSample.Api
 
             app.UseHttpsRedirection();
             app.UseMvc();
+        }
+
+        private void ConfigureDataAccessLayer(IServiceCollection services)
+        {
+            services.AddScoped<IStudentDal, StudentDal>();
+            services.AddScoped<ILessonDal, LessonDal>();
+            services.AddScoped<IStudentLessonDal, StudentLessonDal>();
+        }
+
+        private void ConfigureBusinessLayer(IServiceCollection services)
+        {
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<ILessonService, LessonService>();
+            services.AddScoped<IStudentLessonService, StudentLessonService>();
         }
     }
 }

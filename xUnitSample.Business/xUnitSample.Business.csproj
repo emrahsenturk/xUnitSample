@@ -1,7 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\xUnitSample.Core\xUnitSample.Core.csproj" />
+    <ProjectReference Include="..\xUnitSample.DataAccess\xUnitSample.DataAccess.csproj" />
+    <ProjectReference Include="..\xUnitSample.Model\xUnitSample.Model.csproj" />
+  </ItemGroup>
 
 </Project>

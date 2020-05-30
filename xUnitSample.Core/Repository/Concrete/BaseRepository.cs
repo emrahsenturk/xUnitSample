@@ -7,13 +7,13 @@ using xUnitSample.Core.Repository.Abstract;
 
 namespace xUnitSample.Core.Repository.Concrete
 {
-    public class Repository<TEntity, TId> : IRepository<TEntity, TId>
+    public class BaseRepository<TEntity, TId> : IRepository<TEntity, TId>
         where TEntity : class, IEntity<TId>
         where TId : IEquatable<TId>
     {
         private readonly DbContext context;
 
-        public Repository(DbContext context)
+        public BaseRepository(DbContext context)
         {
             this.context = context;
         }

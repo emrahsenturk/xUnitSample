@@ -15,8 +15,8 @@ namespace xUnitSample.Core.Repository.Abstract
         IQueryable<TEntity> GetAll();
         IQueryable<TEntity> GetQueryable(Expression<Func<TEntity, bool>> filter);
         TEntity Insert(TEntity entity);
+        TEntity Update(TEntity entity);
         TEntity Delete(TEntity entity);
         TEntity Delete(TId id);
-        TEntity Update(TEntity entity);
     }
 }
