@@ -3,7 +3,7 @@ using xUnitSample.Model.Abstract;
 
 namespace xUnitSample.Model.Concrete
 {
-    public class StudentLessonModel : StudentLesson, IModel
+    public class StudentLessonModel : StudentLesson, IBaseModel
     {
     }
 }

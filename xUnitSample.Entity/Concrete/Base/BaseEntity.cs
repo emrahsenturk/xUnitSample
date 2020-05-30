@@ -1,9 +1,9 @@
 ﻿using System;
 using xUnitSample.Entity.Abstract;
 
-namespace xUnitSample.Entity.Concrete
+namespace xUnitSample.Entity.Concrete.Base
 {
-    public class BaseEntity : IEntity
+    public class BaseEntity : IBaseEntity
     {
         public Guid Id { get; set; }
     }

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using xUnitSample.Core.Entities;
 using xUnitSample.Core.Repository.Abstract;
 using xUnitSample.Core.Service.Abstract;
+using xUnitSample.Entity.Abstract;
 
 namespace xUnitSample.Core.Service.Concrete
 {
     public abstract class BaseService<TDal, TModel, TId> : IService<TModel, TId>
-        where TDal : IRepository<TModel, TId>
         where TModel : class, IEntity<TId>
         where TId : IEquatable<TId>
+        where TDal : IRepository<TModel, TId>
     {
         protected readonly TDal dal;
 

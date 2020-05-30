@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using xUnitSample.Entity.Abstract;
+﻿using xUnitSample.Entity.Concrete.Base;
 
 namespace xUnitSample.Entity.Concrete
 {

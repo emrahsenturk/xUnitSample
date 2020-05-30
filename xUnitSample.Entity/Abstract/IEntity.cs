@@ -1,9 +1,10 @@
 ﻿using System;
-using xUnitSample.Core.Entities;
 
 namespace xUnitSample.Entity.Abstract
 {
-    public interface IEntity : IEntity<Guid>
+    public interface IEntity<TId>
+        where TId : IEquatable<TId>
     {
+        TId Id { get; set; }
     }
 }

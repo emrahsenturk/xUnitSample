@@ -2,8 +2,8 @@
 using System;
 using System.Linq;
 using System.Linq.Expressions;
-using xUnitSample.Core.Entities;
 using xUnitSample.Core.Repository.Abstract;
+using xUnitSample.Entity.Abstract;
 
 namespace xUnitSample.Core.Repository.Concrete
 {

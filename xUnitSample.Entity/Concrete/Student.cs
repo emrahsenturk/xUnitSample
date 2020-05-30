@@ -1,4 +1,4 @@
-﻿using xUnitSample.Entity.Abstract;
+﻿using xUnitSample.Entity.Concrete.Base;
 
 namespace xUnitSample.Entity.Concrete
 {
