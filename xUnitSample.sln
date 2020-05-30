@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.Entity", "xUnitSample.Entity\xUnitSample.Entity.csproj", "{31055E50-27BC-4152-A561-CECBCDA681E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitSample.Entity", "xUnitSample.Entity\xUnitSample.Entity.csproj", "{31055E50-27BC-4152-A561-CECBCDA681E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.DataAccess", "xUnitSample.DataAccess\xUnitSample.DataAccess.csproj", "{787DDB2A-D291-494C-A5CA-F17714357633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitSample.DataAccess", "xUnitSample.DataAccess\xUnitSample.DataAccess.csproj", "{787DDB2A-D291-494C-A5CA-F17714357633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.Business", "xUnitSample.Business\xUnitSample.Business.csproj", "{B8DC8248-6F44-4B80-8E60-FC7AD87D370B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitSample.Business", "xUnitSample.Business\xUnitSample.Business.csproj", "{B8DC8248-6F44-4B80-8E60-FC7AD87D370B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.Api", "xUnitSample.Api\xUnitSample.Api.csproj", "{A521EBA1-B93B-4674-AAA6-C50B3ED8BE48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitSample.Api", "xUnitSample.Api\xUnitSample.Api.csproj", "{A521EBA1-B93B-4674-AAA6-C50B3ED8BE48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.Model", "xUnitSample.Model\xUnitSample.Model.csproj", "{73D9B434-6E68-4B61-A076-9DC0316C11F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitSample.Model", "xUnitSample.Model\xUnitSample.Model.csproj", "{73D9B434-6E68-4B61-A076-9DC0316C11F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.Core", "xUnitSample.Core\xUnitSample.Core.csproj", "{51E6DA6F-0513-4F28-921B-8F9D6F1DF964}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xUnitSample.Core", "xUnitSample.Core\xUnitSample.Core.csproj", "{51E6DA6F-0513-4F28-921B-8F9D6F1DF964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xUnitSample.Test", "xUnitSample.Test\xUnitSample.Test.csproj", "{38BAD52F-AB95-4B26-8563-40FE17BB4FCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{51E6DA6F-0513-4F28-921B-8F9D6F1DF964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51E6DA6F-0513-4F28-921B-8F9D6F1DF964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51E6DA6F-0513-4F28-921B-8F9D6F1DF964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38BAD52F-AB95-4B26-8563-40FE17BB4FCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38BAD52F-AB95-4B26-8563-40FE17BB4FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38BAD52F-AB95-4B26-8563-40FE17BB4FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38BAD52F-AB95-4B26-8563-40FE17BB4FCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
