@@ -8,5 +8,10 @@ namespace xUnitSample.DataAccess.Concrete.Context
         public DbSet<StudentModel> Students { get; set; }
         public DbSet<LessonModel> Lessons { get; set; }
         public DbSet<StudentLessonModel> StudentLessons { get; set; }
+
+        public xUnitSampleDbContext(DbContextOptions<xUnitSampleDbContext> options) : base(options)
+        {
+
+        }
     }
 }

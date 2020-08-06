@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using xUnitSample.Business.Abstract;
 using xUnitSample.Business.Concrete;
 using xUnitSample.DataAccess.Abstract;
 using xUnitSample.DataAccess.Concrete;
+using xUnitSample.DataAccess.Concrete.Context;
 
 namespace xUnitSample.Api
 {
@@ -22,14 +26,17 @@ namespace xUnitSample.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureDbContext(services);
             ConfigureDataAccessLayer(services);
             ConfigureBusinessLayer(services);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -42,7 +49,22 @@ namespace xUnitSample.Api
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
+        }
+
+        void ConfigureDbContext(IServiceCollection services)
+        {
+            services.AddDbContext<xUnitSampleDbContext>(
+                options =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("ConnStr"));
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                });
         }
 
         private void ConfigureDataAccessLayer(IServiceCollection services)
