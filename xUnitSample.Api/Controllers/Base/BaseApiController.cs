@@ -20,7 +20,12 @@ namespace xUnitSample.Api.Controllers.Base
         //GET api/{controller}/{id}
         public virtual TModel GetById(Guid id)
         {
-            return service.GetById(id);
+            var model = service.GetById(id);
+            if(model is null)
+            {
+                throw new NullReferenceException();
+            }
+            return model;
         }
 
         public virtual IEnumerable<TModel> GetAll()

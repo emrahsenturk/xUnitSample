@@ -11,7 +11,7 @@ namespace xUnitSample.Test.Tests.Student
 {
     public class StudentServiceTest : IClassFixture<CustomWebApplicationFactory<Api.Startup>>
     {
-        public CustomWebApplicationFactory<Api.Startup> _factory;
+        private readonly CustomWebApplicationFactory<Api.Startup> _factory;
 
         public StudentServiceTest(CustomWebApplicationFactory<Api.Startup> factory)
         {

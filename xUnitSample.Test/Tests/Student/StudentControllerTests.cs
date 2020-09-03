@@ -123,7 +123,7 @@ namespace xUnitSample.Test.Tests.Student
         }
 
         [Theory, InlineData(new object[] { "AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE" })]
-        public void GetStudentById_ShouldAssertNull(string Id)
+        public void GetStudentById_ShouldAssertThrowNullReferenceException(string Id)
         {
             using var scope = _factory.Server.Host.Services.CreateScope();
             var studentService = scope.ServiceProvider.GetRequiredService<IStudentService>();
@@ -131,9 +131,8 @@ namespace xUnitSample.Test.Tests.Student
             var studentController = new StudentController(studentService);
 
             var id = Guid.Parse(Id);
-            var currentStudentModel = studentController.GetById(id);
 
-            Assert.Null(currentStudentModel);
+            Assert.Throws<NullReferenceException>(() => studentController.GetById(id));
         }
 
         [Theory, InlineData(new object[] { "75D4CF4B-2BE8-47B3-8E72-2C9A59D0567B" })]
